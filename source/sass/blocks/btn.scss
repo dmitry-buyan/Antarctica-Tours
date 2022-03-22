@@ -1,11 +1,15 @@
 .btn {
   display: inline-flex;
-  margin: 10px 0;
+  justify-content: center;
   padding: 10px 20px;
 
-  color: $color-default-white;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
 
-  background-color: $color-neon-blue;
+  color: $color-tangaroa;
+
+  background-color: $color-alice-blue;
   border: none;
   cursor: pointer;
 

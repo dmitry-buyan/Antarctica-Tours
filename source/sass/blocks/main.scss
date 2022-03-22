@@ -1,0 +1,145 @@
+.main__intro {
+  padding: 120px 0;
+
+  @include vp-767 {
+    padding: 100px 0;
+  }
+
+  @include vp-374 {
+    padding: 65px 0;
+  }
+}
+
+.main__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  @include vp-767 {
+    font-size: 26px;
+    line-height: 39px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include vp-374 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &--bold {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+
+    @include vp-1023 {
+      text-align: center;
+    }
+
+    @include vp-767 {
+      font-size: 34px;
+      line-height: 51px;
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+
+    @include vp-374 {
+      line-height: 31px;
+    }
+  }
+}
+
+.main__advantages {
+  padding: 120px 0;
+  background: #e3ecf6 url("../img/advantage-desktop@1x.jpg") no-repeat center / cover;
+
+  @include vp-1919 {
+    @include retina {
+      background-image: url("../img/advantage-desktop@2x.jpg");
+    }
+  }
+
+  @include vp-767 {
+    padding: 100px 0;
+    background-image: url("../img/advantage-tablet@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/advantage-tablet@2x.jpg");
+    }
+  }
+
+  @include vp-374 {
+    padding: 65px 0;
+    background-image: url("../img/advantage-mobile@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/advantage-mobile@2x.jpg");
+    }
+  }
+}
+
+.main__tours {
+  padding: 120px 0;
+
+  @include vp-767 {
+    padding: 100px 0;
+  }
+
+  @include vp-374 {
+    padding: 65px 0;
+  }
+}
+
+.main__order {
+  padding: 50px 0;
+  background: #b9ddfb url("../img/booking-desktop@1x.jpg") no-repeat center / cover;
+
+  @include vp-1919 {
+    @include retina {
+      background-image: url("../img/booking-desktop@2x.jpg");
+    }
+  }
+
+  @include vp-1279 {
+    padding: 100px 0;
+  }
+
+  @include vp-767 {
+    background-image: url("../img/booking-tablet@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/booking-tablet@2x.jpg");
+    }
+  }
+
+  @include vp-374 {
+    padding: 65px 0;
+    background-image: url("../img/booking-mobile@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/booking-mobile@2x.jpg");
+    }
+  }
+}
+
+.main__contact {
+  padding: 120px 0;
+
+  @include vp-767 {
+    padding: 100px 0;
+  }
+
+  @include vp-374 {
+    padding: 65px 0;
+  }
+}

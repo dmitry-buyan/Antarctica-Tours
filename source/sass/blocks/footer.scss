@@ -1,0 +1,47 @@
+.footer {
+  padding: 50px 0;
+  background-color: $color-tangaroa;
+
+  @include vp-374 {
+    padding: 40px 0;
+  }
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+
+  @include vp-767 {
+    column-gap: 25px;
+  }
+
+  @include vp-374 {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 30px;
+  }
+}
+
+.footer__logo {
+  flex: 0 0 auto;
+}
+
+.footer__logo img {
+  width: 70px;
+  height: 38px;
+
+  @include vp-767 {
+    width: 38px;
+    height: 20px;
+  }
+
+  @include vp-374 {
+    width: 42px;
+    height: 22px;
+  }
+}
+
+.footer__menu {
+  flex: 1 1 auto;
+}
