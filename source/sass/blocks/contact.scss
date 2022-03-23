@@ -38,57 +38,55 @@
   @include vp-767 {
     max-width: 324px;
   }
+
+  p {
+    margin: 0;
+  }
 }
 
-.contact__text {
-  margin: 0;
+.contact__title p {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+}
 
-  &--title {
-    margin-bottom: 40px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
-  }
+.contact__address p {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 28px;
 
-  &--address {
-    position: relative;
-    margin-bottom: 25px;
-    padding-left: 28px;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: "";
+    width: 18px;
+    height: 22px;
+    background: url("../img/sprite/icon-location.svg") no-repeat center;
+    transform: translate(0, -50%);
 
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      content: "";
-      width: 18px;
-      height: 22px;
-      background: url("../img/sprite/icon-location.svg") no-repeat center;
-      transform: translate(0, -50%);
-
-      @include vp-767 {
-        top: 5px;
-        transform: none;
-      }
+    @include vp-767 {
+      top: 5px;
+      transform: none;
     }
   }
+}
 
-  &--phone {
-    a {
-      position: relative;
-      margin-bottom: 25px;
-      padding-left: 28px;
-      white-space: nowrap;
+.contact__phone a {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 28px;
+  white-space: nowrap;
 
-      &::before {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        content: "";
-        width: 18px;
-        height: 18px;
-        background: url("../img/sprite/icon-phone.svg") no-repeat center;
-        transform: translate(0, -50%);
-      }
-    }
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url("../img/sprite/icon-phone.svg") no-repeat center;
+    transform: translate(0, -50%);
   }
 }

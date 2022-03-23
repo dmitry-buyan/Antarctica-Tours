@@ -24,6 +24,27 @@
 .order__body {
   max-width: 500px;
   align-self: center;
+
+  p {
+    max-width: 360px;
+    font-size: 18px;
+    line-height: 27px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    @include vp-1023 {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @include vp-767 {
+      padding: 0 16px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
 }
 
 .order__title {
@@ -31,27 +52,6 @@
 
   &:not(:last-child) {
     margin-bottom: 30px;
-  }
-}
-
-.order__slogan {
-  max-width: 360px;
-  font-size: 18px;
-  line-height: 27px;
-
-  &:not(:last-child) {
-    margin-bottom: 15px;
-  }
-
-  @include vp-1023 {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  @include vp-767 {
-    padding: 0 16px;
-    font-size: 16px;
-    line-height: 22px;
   }
 }
 

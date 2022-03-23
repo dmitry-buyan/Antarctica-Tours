@@ -789,6 +789,11 @@ button,
   color: #f9fbfd;
 }
 
+.header p {
+  margin: 0;
+  font-size: 20px;
+}
+
 .header__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -819,11 +824,6 @@ button,
   font-weight: 700;
   font-size: 54px;
   line-height: 66px;
-}
-
-.header__slogan {
-  margin: 0;
-  font-size: 20px;
 }
 
 .logo__image {
@@ -1153,22 +1153,22 @@ button,
   align-self: center;
 }
 
+.order__body p {
+  max-width: 360px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.order__body p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
 .order__title {
   text-align: left;
 }
 
 .order__title:not(:last-child) {
   margin-bottom: 30px;
-}
-
-.order__slogan {
-  max-width: 360px;
-  font-size: 18px;
-  line-height: 27px;
-}
-
-.order__slogan:not(:last-child) {
-  margin-bottom: 15px;
 }
 
 .order__form {
@@ -1415,24 +1415,24 @@ button,
   max-width: 500px;
 }
 
-.contact__text {
+.contact__info p {
   margin: 0;
 }
 
-.contact__text--title {
+.contact__title p {
   margin-bottom: 40px;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
 }
 
-.contact__text--address {
+.contact__address p {
   position: relative;
   margin-bottom: 25px;
   padding-left: 28px;
 }
 
-.contact__text--address::before {
+.contact__address p::before {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1445,14 +1445,14 @@ button,
   transform: translate(0, -50%);
 }
 
-.contact__text--phone a {
+.contact__phone a {
   position: relative;
   margin-bottom: 25px;
   padding-left: 28px;
   white-space: nowrap;
 }
 
-.contact__text--phone a::before {
+.contact__phone a::before {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1623,7 +1623,7 @@ button,
     gap: 60px;
   }
 
-  .order__slogan {
+  .order__body p {
     text-align: center;
     margin: 0 auto;
   }
@@ -1678,6 +1678,11 @@ button,
   .header {
     padding: 30px 0;
     background-image: url("../img/promo-tablet@1x.jpg");
+  }
+
+  .header p {
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .menu-open .header__logo {
@@ -1739,11 +1744,6 @@ button,
     margin-bottom: 25px;
     font-size: 50px;
     line-height: 61px;
-  }
-
-  .header__slogan {
-    font-size: 18px;
-    line-height: 22px;
   }
 
   .logo__image {
@@ -1952,7 +1952,7 @@ button,
     gap: 40px;
   }
 
-  .order__slogan {
+  .order__body p {
     padding: 0 16px;
     font-size: 16px;
     line-height: 22px;
@@ -1984,7 +1984,7 @@ button,
     max-width: 324px;
   }
 
-  .contact__text--address::before {
+  .contact__address p::before {
     top: 5px;
     -webkit-transform: none;
     -ms-transform: none;
@@ -2062,6 +2062,11 @@ button,
     background-image: url("../img/promo-mobile@1x.jpg");
   }
 
+  .header p {
+    padding-right: 80px;
+    font-size: 16px;
+  }
+
   .menu-open .header__logo {
     margin-left: 25px;
   }
@@ -2074,11 +2079,6 @@ button,
     margin-bottom: 25px;
     font-size: 36px;
     line-height: 45px;
-  }
-
-  .header__slogan {
-    padding-right: 80px;
-    font-size: 16px;
   }
 
   .logo__image {
