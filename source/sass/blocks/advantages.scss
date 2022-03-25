@@ -19,11 +19,11 @@
 
 .advantages__card {
   display: grid;
-  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-rows: 1fr 0.7fr 2fr;
   row-gap: 5px;
   max-width: 360px;
   min-width: 206px;
-  padding: 20px 15px 20px 30px;
+  padding: 20px 15px 25px 30px;
   background-color: $color-alice-blue;
 
   @include vp-767 {

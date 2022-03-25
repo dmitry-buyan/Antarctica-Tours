@@ -22,11 +22,12 @@
 }
 
 .order__body {
-  max-width: 500px;
+  min-width: 500px;
   align-self: center;
 
   p {
     max-width: 360px;
+    margin: 0;
     font-size: 18px;
     line-height: 27px;
 
@@ -49,15 +50,16 @@
 
 .order__title {
   text-align: left;
+  line-height: 42px;
 
   &:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 }
 
 .order__form {
   align-self: center;
-  padding: 50px;
+  padding: 42px 50px 50px;
   background-color: $color-tangaroa;
 
   @include vp-1279 {
