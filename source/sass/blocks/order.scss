@@ -13,11 +13,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 60px;
+    row-gap: 53px;
+    padding: 0 0 0 10px;
   }
 
   @include vp-767 {
-    gap: 40px;
+    gap: 35px;
+    padding: 0;
   }
 }
 
@@ -46,14 +48,26 @@
       line-height: 22px;
     }
   }
+
+  @include vp-767 {
+    min-width: unset;
+  }
 }
 
 .order__title {
   text-align: left;
   line-height: 42px;
 
-  &:not(:last-child) {
-    margin-bottom: 15px;
+  @include vp-1023 {
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
+
+  @include vp-767 {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
   }
 }
 
@@ -68,6 +82,6 @@
 
   @include vp-767 {
     width: 100%;
-    padding: 40px 30px;
+    padding: 35px 30px 40px;
   }
 }

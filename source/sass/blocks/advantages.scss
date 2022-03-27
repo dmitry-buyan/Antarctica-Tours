@@ -1,7 +1,9 @@
 .advantages__list {
   display: grid;
+  justify-content: space-between;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px 40px;
+  column-gap: 30px;
+  row-gap: 30px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -18,25 +20,24 @@
 }
 
 .advantages__card {
-  display: grid;
-  grid-template-rows: 1fr 0.7fr 2fr;
-  row-gap: 5px;
+  position: relative;
   max-width: 360px;
-  min-width: 206px;
-  padding: 20px 15px 25px 30px;
+  padding: 85px 15px 25px 30px;
   background-color: $color-alice-blue;
 
-  @include vp-767 {
-    padding: 15px 15px 15px 20px;
-  }
-
   h3 {
-    margin: 0;
+    margin: 0 0 20px 0;
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
 
+    @include vp-1023 {
+      margin-bottom: 8px;
+    }
+
     @include vp-767 {
+      max-width: 170px;
+      margin: 0 0 10px 0;
       line-height: 25px;
     }
   }
@@ -50,30 +51,66 @@
     &:not(:last-child) {
       margin-bottom: 15px;
     }
+
+    @include vp-1023 {
+      padding-right: 0;
+    }
   }
 
   &::before {
+    content: "";
+    position: absolute;
+    left: 30px;
     align-self: center;
   }
 
   &--1::before {
-    content: "";
+    top: 30px;
     width: 27px;
     height: 32px;
-    background: url("../img/sprite/icon-advantage-1.svg") no-repeat center;
+    background: url("../img/sprite/icon-advantage-1.svg") no-repeat center / cover;
   }
 
   &--2::before {
-    content: "";
+    top: 35px;
     width: 38px;
     height: 21px;
-    background: url("../img/sprite/icon-advantage-2.svg") no-repeat center;
+    background: url("../img/sprite/icon-advantage-2.svg") no-repeat center / cover;
   }
 
   &--3::before {
-    content: "";
+    top: 38px;
     width: 42px;
     height: 15px;
-    background: url("../img/sprite/icon-advantage-3.svg") no-repeat center;
+    background: url("../img/sprite/icon-advantage-3.svg") no-repeat center / cover;
+  }
+
+  @include vp-1023 {
+    padding: 67px 15px 20px 20px;
+
+    &--1::before {
+      top: 25px;
+      left: 20px;
+      width: 21px;
+      height: 26px;
+    }
+
+    &--2::before {
+      top: 28px;
+      left: 20px;
+      width: 33px;
+      height: 19px;
+    }
+
+    &--3::before {
+      top: 30px;
+      left: 20px;
+      width: 38px;
+      height: 13px;
+    }
+  }
+
+  @include vp-767 {
+    padding: 70px 20px 20px 20px;
   }
 }

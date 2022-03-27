@@ -1,10 +1,14 @@
 .form-order {
   h3 {
-    margin: 0 0 28px 0;
+    margin: 0 0 29px 0;
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
     color: $color-alice-blue;
+
+    @include vp-767 {
+      line-height: 25px;
+    }
   }
 
   @include vp-767 {
@@ -17,6 +21,10 @@
   flex-direction: column;
   row-gap: 21px;
   margin: 0 0 34px 0;
+
+  @include vp-767 {
+    margin-bottom: 23px;
+  }
 }
 
 .form-order__row {
@@ -25,7 +33,7 @@
 
   input[type="text"],
   input[type="email"],
-  input[type="tel"] {
+  input[type="number"] {
     width: 100%;
     max-width: 100%;
     padding: 13px 16px;
@@ -72,6 +80,7 @@
   &--data {
     position: relative;
     padding-left: 23px;
+    cursor: pointer;
 
     &:hover input ~ .form-order__checkmark {
       background-color: #cccccc;
@@ -80,6 +89,14 @@
     input:checked ~ .form-order__checkmark::after {
       display: block;
     }
+
+    input[type="checkbox"]:focus + .form-order__checkmark {
+      outline: 2px solid #ffa500ff;
+    }
+
+    @include vp-374 {
+      padding-left: 28px;
+    }
   }
 }
 
@@ -87,8 +104,8 @@
   position: absolute;
   top: 50%;
   left: 0;
-  height: 18px;
   width: 18px;
+  height: 18px;
   background-color: $color-alice-blue;
   transform: translate(0, -50%);
 
@@ -103,6 +120,13 @@
     border: solid $color-tangaroa;
     border-width: 0 2px 2px 0;
     transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  @include vp-374 {
+    top: 0;
+    width: 20px;
+    height: 20px;
+    transform: unset;
   }
 }
 

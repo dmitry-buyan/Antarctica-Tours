@@ -7,18 +7,23 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 33px;
+  row-gap: 15px;
   margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
 
-  @include vp-767 {
-    column-gap: 23px;
+  @include vp-1023 {
+    column-gap: 22px;
   }
 
   &--footer {
-    @include vp-374 {
+    @include vp-1023 {
+      column-gap: 24px;
+    }
+
+    @include vp-767 {
       flex-direction: column;
-      row-gap: 23px;
+      row-gap: 8px;
     }
   }
 }
@@ -35,12 +40,22 @@
     opacity: 0.5;
   }
 
-  @include vp-767 {
+  @include vp-1023 {
     font-size: 14px;
     line-height: 17px;
   }
 
+  @include vp-767 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
   &--footer {
+    @include vp-1023 {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
     @include vp-767 {
       font-size: 12px;
       line-height: 15px;

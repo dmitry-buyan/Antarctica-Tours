@@ -1,12 +1,12 @@
 .main__intro {
   padding: 120px 0;
 
-  @include vp-767 {
-    padding: 100px 0;
+  @include vp-1023 {
+    padding: 90px 0 96px;
   }
 
-  @include vp-374 {
-    padding: 65px 0;
+  @include vp-767 {
+    padding: 55px 0 65px;
   }
 }
 
@@ -21,18 +21,22 @@
     margin-bottom: 50px;
   }
 
-  @include vp-767 {
+  @include vp-1023 {
     font-size: 26px;
     line-height: 39px;
 
     &:not(:last-child) {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
   }
 
-  @include vp-374 {
+  @include vp-767 {
     font-size: 24px;
     line-height: 36px;
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
   }
 
   &--bold {
@@ -41,19 +45,16 @@
     line-height: 60px;
 
     @include vp-1023 {
-      text-align: center;
-    }
-
-    @include vp-767 {
       font-size: 34px;
       line-height: 51px;
+      text-align: center;
 
       &:not(:last-child) {
-        margin-bottom: 25px;
+        margin-bottom: 11px;
       }
     }
 
-    @include vp-374 {
+    @include vp-767 {
       line-height: 31px;
     }
   }
@@ -69,8 +70,8 @@
     }
   }
 
-  @include vp-767 {
-    padding: 100px 0;
+  @include vp-1023 {
+    padding: 90px 0 100px;
     background-image: url("../img/advantage-tablet@1x.jpg");
 
     @include retina {
@@ -78,8 +79,8 @@
     }
   }
 
-  @include vp-374 {
-    padding: 65px 0;
+  @include vp-767 {
+    padding: 55px 0 65px;
     background-image: url("../img/advantage-mobile@1x.jpg");
 
     @include retina {
@@ -91,12 +92,12 @@
 .main__tours {
   padding: 110px 0 120px;
 
-  @include vp-767 {
-    padding: 100px 0;
+  @include vp-1023 {
+    padding: 90px 0 100px;
   }
 
-  @include vp-374 {
-    padding: 65px 0;
+  @include vp-767 {
+    padding: 55px 0 65px;
   }
 }
 
@@ -110,11 +111,8 @@
     }
   }
 
-  @include vp-1279 {
-    padding: 100px 0;
-  }
-
-  @include vp-767 {
+  @include vp-1023 {
+    padding: 85px 0 100px;
     background-image: url("../img/booking-tablet@1x.jpg");
 
     @include retina {
@@ -122,8 +120,8 @@
     }
   }
 
-  @include vp-374 {
-    padding: 65px 0;
+  @include vp-767 {
+    padding: 60px 0 65px;
     background-image: url("../img/booking-mobile@1x.jpg");
 
     @include retina {
@@ -135,11 +133,11 @@
 .main__contact {
   padding: 120px 0;
 
-  @include vp-767 {
+  @include vp-1023 {
     padding: 100px 0;
   }
 
-  @include vp-374 {
-    padding: 65px 0;
+  @include vp-767 {
+    padding: 55px 0 65px;
   }
 }

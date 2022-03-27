@@ -3,7 +3,9 @@
   background: #00336e url("../img/promo-desktop@1x.jpg") no-repeat center / cover;
   color: $color-alice-blue;
 
-  @include vp-1919 {
+  @include vp-1023 {
+    padding: 27px 0;
+
     @include retina {
       background-image: url("../img/promo-desktop@2x.jpg");
     }
@@ -31,12 +33,12 @@
     margin: 0;
     font-size: 20px;
 
-    @include vp-767 {
+    @include vp-1023 {
       font-size: 18px;
       line-height: 22px;
     }
 
-    @include vp-374 {
+    @include vp-767 {
       padding-right: 80px;
       font-size: 16px;
     }
@@ -51,7 +53,9 @@
 }
 
 .header__logo {
+  display: flex;
   flex: 0 0 auto;
+  margin: 0;
 
   .menu-open & {
     @include vp-767 {
@@ -59,8 +63,16 @@
     }
 
     @include vp-374 {
-      margin-left: 15px;
+      margin-left: 35px;
     }
+  }
+
+  @include vp-1023 {
+    margin: 3px 0 0 4px;
+  }
+
+  @include vp-767 {
+    margin: 0;
   }
 }
 
@@ -73,18 +85,18 @@
     height: 100%;
     padding: 75px 15px;
     overflow: auto;
-    background-color: $color-whisper;
+    background-color: $color-alice-blue;
     z-index: 10;
     transition: right 0.3s ease 0s;
 
     .menu-open & {
-      right: -15px;
+      right: -35px;
     }
 
     .menu__list {
       flex: 1 1 auto;
       flex-direction: column;
-      row-gap: 10px;
+      row-gap: 8px;
       margin: unset;
     }
 
@@ -105,16 +117,12 @@
 .header__bottom {
   padding: 190px 0 244px 95px;
 
-  @media (min-width: 1160px) {
-    padding-left: 95px;
+  @include vp-1023 {
+    padding: 216px 0 250px 5px;
   }
 
   @include vp-767 {
-    padding: 230px 0 250px 0;
-  }
-
-  @include vp-374 {
-    padding: 143px 0 165px 0;
+    padding: 133px 0 160px 0;
   }
 }
 
@@ -124,14 +132,13 @@
   font-size: 54px;
   line-height: 66px;
 
-  @include vp-767 {
-    margin-bottom: 25px;
+  @include vp-1023 {
     font-size: 50px;
     line-height: 61px;
   }
 
-  @include vp-374 {
-    margin-bottom: 25px;
+  @include vp-767 {
+    margin-bottom: 11px;
     font-size: 36px;
     line-height: 45px;
   }

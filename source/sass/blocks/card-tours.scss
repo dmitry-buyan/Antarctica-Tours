@@ -10,11 +10,11 @@
     color: $color-alice-blue;
   }
 
-  @include vp-767 {
+  @include vp-1023 {
     width: 309px;
   }
 
-  @include vp-374 {
+  @include vp-767 {
     width: 270px;
   }
 }
@@ -37,15 +37,23 @@
     position: absolute;
     left: 30px;
     bottom: 30px;
+
+    @include vp-1023 {
+      left: 35px;
+    }
+
+    @include vp-767 {
+      left: 25px;
+      bottom: 18px;
+    }
   }
 
   img {
-    @include vp-767 {
-      width: 309px;
-      height: 386px;
+    @include vp-1023 {
+      width: 100%;
     }
 
-    @include vp-374 {
+    @include vp-767 {
       width: 270px;
     }
   }
@@ -53,16 +61,30 @@
 
 .card-tours__back {
   position: absolute;
-  top: 50%;
+  top: 0;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   padding: 34px 25px;
   background-color: $color-tangaroa;
-  transform: rotateY(180deg) translateY(-50%);
+  transform: rotateY(180deg);
   backface-visibility: hidden;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  h3 {
+    margin-bottom: 5px;
+  }
+
+  @include vp-1023 {
+    padding: 25px 35px 35px;
+  }
+
+  @include vp-767 {
+    padding: 28px 25px 35px;
+  }
 }
 
 .card-tours__body {
@@ -83,7 +105,7 @@
 
 .card-tours__column {
   &:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 }
 

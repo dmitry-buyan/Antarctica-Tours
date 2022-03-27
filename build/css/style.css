@@ -439,6 +439,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -634,7 +635,7 @@ button,
 
 .container {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
@@ -660,6 +661,10 @@ button,
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .btn--red {
@@ -810,9 +815,13 @@ button,
 }
 
 .header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  margin: 0;
 }
 
 .header__bottom {
@@ -849,6 +858,7 @@ button,
   -webkit-column-gap: 33px;
   -moz-column-gap: 33px;
   column-gap: 33px;
+  row-gap: 15px;
   margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
@@ -946,7 +956,12 @@ button,
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  width: 48%;
+}
+
+.intro__media {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .intro__title {
@@ -960,9 +975,15 @@ button,
 .advantages__list {
   display: -ms-grid;
   display: grid;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px 40px;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+  row-gap: 30px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -976,19 +997,14 @@ button,
 }
 
 .advantages__card {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 0.7fr 2fr;
-  grid-template-rows: 1fr 0.7fr 2fr;
-  row-gap: 5px;
+  position: relative;
   max-width: 360px;
-  min-width: 206px;
-  padding: 20px 15px 25px 30px;
+  padding: 85px 15px 25px 30px;
   background-color: #f9fbfd;
 }
 
 .advantages__card h3 {
-  margin: 0;
+  margin: 0 0 20px 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -1006,30 +1022,33 @@ button,
 }
 
 .advantages__card::before {
+  content: "";
+  position: absolute;
+  left: 30px;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
 }
 
 .advantages__card--1::before {
-  content: "";
+  top: 30px;
   width: 27px;
   height: 32px;
-  background: url("../img/sprite/icon-advantage-1.svg") no-repeat center;
+  background: url("../img/sprite/icon-advantage-1.svg") no-repeat center/cover;
 }
 
 .advantages__card--2::before {
-  content: "";
+  top: 35px;
   width: 38px;
   height: 21px;
-  background: url("../img/sprite/icon-advantage-2.svg") no-repeat center;
+  background: url("../img/sprite/icon-advantage-2.svg") no-repeat center/cover;
 }
 
 .advantages__card--3::before {
-  content: "";
+  top: 38px;
   width: 42px;
   height: 15px;
-  background: url("../img/sprite/icon-advantage-3.svg") no-repeat center;
+  background: url("../img/sprite/icon-advantage-3.svg") no-repeat center/cover;
 }
 
 .tours__body {
@@ -1089,7 +1108,7 @@ button,
 
 .card-tours__back {
   position: absolute;
-  top: 50%;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1099,13 +1118,19 @@ button,
   flex-direction: column;
   row-gap: 10px;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   padding: 34px 25px;
   background-color: #011c40;
-  -webkit-transform: rotateY(180deg) translateY(-50%);
-  transform: rotateY(180deg) translateY(-50%);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.card-tours__back h3 {
+  margin-bottom: 5px;
 }
 
 .card-tours__body {
@@ -1125,7 +1150,7 @@ button,
 }
 
 .card-tours__column:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .card-tours__btn {
@@ -1169,10 +1194,6 @@ button,
   line-height: 42px;
 }
 
-.order__title:not(:last-child) {
-  margin-bottom: 15px;
-}
-
 .order__form {
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -1182,7 +1203,7 @@ button,
 }
 
 .form-order h3 {
-  margin: 0 0 28px 0;
+  margin: 0 0 29px 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -1212,7 +1233,7 @@ button,
 
 .form-order__row input[type="text"],
 .form-order__row input[type="email"],
-.form-order__row input[type="tel"] {
+.form-order__row input[type="number"] {
   width: 100%;
   max-width: 100%;
   padding: 13px 16px;
@@ -1224,7 +1245,7 @@ button,
 
 .form-order__row input[type="text"]::-webkit-input-placeholder,
 .form-order__row input[type="email"]::-webkit-input-placeholder,
-.form-order__row input[type="tel"]::-webkit-input-placeholder {
+.form-order__row input[type="number"]::-webkit-input-placeholder {
   font-weight: 400;
   color: #011c40;
   opacity: 0.7;
@@ -1232,7 +1253,7 @@ button,
 
 .form-order__row input[type="text"]::-moz-placeholder,
 .form-order__row input[type="email"]::-moz-placeholder,
-.form-order__row input[type="tel"]::-moz-placeholder {
+.form-order__row input[type="number"]::-moz-placeholder {
   font-weight: 400;
   color: #011c40;
   opacity: 0.7;
@@ -1240,7 +1261,7 @@ button,
 
 .form-order__row input[type="text"]:-ms-input-placeholder,
 .form-order__row input[type="email"]:-ms-input-placeholder,
-.form-order__row input[type="tel"]:-ms-input-placeholder {
+.form-order__row input[type="number"]:-ms-input-placeholder {
   font-weight: 400;
   color: #011c40;
   opacity: 0.7;
@@ -1248,7 +1269,7 @@ button,
 
 .form-order__row input[type="text"]::-ms-input-placeholder,
 .form-order__row input[type="email"]::-ms-input-placeholder,
-.form-order__row input[type="tel"]::-ms-input-placeholder {
+.form-order__row input[type="number"]::-ms-input-placeholder {
   font-weight: 400;
   color: #011c40;
   opacity: 0.7;
@@ -1256,7 +1277,7 @@ button,
 
 .form-order__row input[type="text"]::placeholder,
 .form-order__row input[type="email"]::placeholder,
-.form-order__row input[type="tel"]::placeholder {
+.form-order__row input[type="number"]::placeholder {
   font-weight: 400;
   color: #011c40;
   opacity: 0.7;
@@ -1266,8 +1287,8 @@ button,
 .form-order__row input[type="text"]:focus,
 .form-order__row input[type="email"]:hover,
 .form-order__row input[type="email"]:focus,
-.form-order__row input[type="tel"]:hover,
-.form-order__row input[type="tel"]:focus {
+.form-order__row input[type="number"]:hover,
+.form-order__row input[type="number"]:focus {
   background-color: #ffffff;
 }
 
@@ -1275,8 +1296,8 @@ button,
 .form-order__row input[type="text"]:focus::-webkit-input-placeholder,
 .form-order__row input[type="email"]:hover::-webkit-input-placeholder,
 .form-order__row input[type="email"]:focus::-webkit-input-placeholder,
-.form-order__row input[type="tel"]:hover::-webkit-input-placeholder,
-.form-order__row input[type="tel"]:focus::-webkit-input-placeholder {
+.form-order__row input[type="number"]:hover::-webkit-input-placeholder,
+.form-order__row input[type="number"]:focus::-webkit-input-placeholder {
   opacity: 1;
 }
 
@@ -1284,8 +1305,8 @@ button,
 .form-order__row input[type="text"]:focus::-moz-placeholder,
 .form-order__row input[type="email"]:hover::-moz-placeholder,
 .form-order__row input[type="email"]:focus::-moz-placeholder,
-.form-order__row input[type="tel"]:hover::-moz-placeholder,
-.form-order__row input[type="tel"]:focus::-moz-placeholder {
+.form-order__row input[type="number"]:hover::-moz-placeholder,
+.form-order__row input[type="number"]:focus::-moz-placeholder {
   opacity: 1;
 }
 
@@ -1293,8 +1314,8 @@ button,
 .form-order__row input[type="text"]:focus:-ms-input-placeholder,
 .form-order__row input[type="email"]:hover:-ms-input-placeholder,
 .form-order__row input[type="email"]:focus:-ms-input-placeholder,
-.form-order__row input[type="tel"]:hover:-ms-input-placeholder,
-.form-order__row input[type="tel"]:focus:-ms-input-placeholder {
+.form-order__row input[type="number"]:hover:-ms-input-placeholder,
+.form-order__row input[type="number"]:focus:-ms-input-placeholder {
   opacity: 1;
 }
 
@@ -1302,8 +1323,8 @@ button,
 .form-order__row input[type="text"]:focus::-ms-input-placeholder,
 .form-order__row input[type="email"]:hover::-ms-input-placeholder,
 .form-order__row input[type="email"]:focus::-ms-input-placeholder,
-.form-order__row input[type="tel"]:hover::-ms-input-placeholder,
-.form-order__row input[type="tel"]:focus::-ms-input-placeholder {
+.form-order__row input[type="number"]:hover::-ms-input-placeholder,
+.form-order__row input[type="number"]:focus::-ms-input-placeholder {
   opacity: 1;
 }
 
@@ -1311,8 +1332,8 @@ button,
 .form-order__row input[type="text"]:focus::placeholder,
 .form-order__row input[type="email"]:hover::placeholder,
 .form-order__row input[type="email"]:focus::placeholder,
-.form-order__row input[type="tel"]:hover::placeholder,
-.form-order__row input[type="tel"]:focus::placeholder {
+.form-order__row input[type="number"]:hover::placeholder,
+.form-order__row input[type="number"]:focus::placeholder {
   opacity: 1;
 }
 
@@ -1333,6 +1354,7 @@ button,
 .form-order__row--data {
   position: relative;
   padding-left: 23px;
+  cursor: pointer;
 }
 
 .form-order__row--data:hover input ~ .form-order__checkmark {
@@ -1343,12 +1365,16 @@ button,
   display: block;
 }
 
+.form-order__row--data input[type="checkbox"]:focus + .form-order__checkmark {
+  outline: 2px solid #ffa500ff;
+}
+
 .form-order__checkmark {
   position: absolute;
   top: 50%;
   left: 0;
-  height: 18px;
   width: 18px;
+  height: 18px;
   background-color: #f9fbfd;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -1419,7 +1445,7 @@ button,
 }
 
 .contact__title p {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -1563,23 +1589,7 @@ button,
   }
 }
 
-@media (min-width: 1160px) {
-  .header__bottom {
-    padding-left: 95px;
-  }
-}
-
-@media (max-width: 1919px) {
-  .container {
-    padding: 0 45px;
-  }
-}
-
 @media (max-width: 1919px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1919px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1919px) and (min-resolution: 144dpi), (max-width: 1919px) and (min-resolution: 1.5dppx) {
-  .header {
-    background-image: url("../img/promo-desktop@2x.jpg");
-  }
-
   .main__advantages {
     background-image: url("../img/advantage-desktop@2x.jpg");
   }
@@ -1589,11 +1599,13 @@ button,
   }
 }
 
-@media (max-width: 1279px) {
-  .main__order {
-    padding: 100px 0;
+@media (max-width: 1439px) {
+  .container {
+    padding: 0 45px;
   }
+}
 
+@media (max-width: 1279px) {
   .order__inner {
     padding: 0;
   }
@@ -1604,8 +1616,192 @@ button,
 }
 
 @media (max-width: 1023px) {
+  .header {
+    padding: 27px 0;
+  }
+
+  .header p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .header__logo {
+    margin: 3px 0 0 4px;
+  }
+
+  .header__bottom {
+    padding: 216px 0 250px 5px;
+  }
+
+  .header__title {
+    font-size: 50px;
+    line-height: 61px;
+  }
+
+  .logo__image {
+    width: 38px;
+    height: 20px;
+  }
+
+  .menu-open .logo__image {
+    position: relative;
+    z-index: 20;
+  }
+
+  .menu-open .logo__image > path {
+    fill: #011c40;
+  }
+
+  .menu__list {
+    -webkit-column-gap: 22px;
+    -moz-column-gap: 22px;
+    column-gap: 22px;
+  }
+
+  .menu__list--footer {
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
+  }
+
+  .menu__link {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .menu__link--footer {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .main__intro {
+    padding: 90px 0 96px;
+  }
+
+  .main__title {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  .main__title:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
   .main__title--bold {
+    font-size: 34px;
+    line-height: 51px;
     text-align: center;
+  }
+
+  .main__title--bold:not(:last-child) {
+    margin-bottom: 11px;
+  }
+
+  .main__advantages {
+    padding: 90px 0 100px;
+    background-image: url("../img/advantage-tablet@1x.jpg");
+  }
+
+  .main__tours {
+    padding: 90px 0 100px;
+  }
+
+  .main__order {
+    padding: 85px 0 100px;
+    background-image: url("../img/booking-tablet@1x.jpg");
+  }
+
+  .main__contact {
+    padding: 100px 0;
+  }
+
+  .intro img {
+    width: 324px;
+  }
+
+  .intro__container {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+  }
+
+  .intro__body {
+    padding-left: 5px;
+  }
+
+  .intro__media {
+    width: 324px;
+    margin-right: -5px;
+    padding-top: 10px;
+  }
+
+  .intro__title {
+    padding-right: 50px;
+    line-height: 36px;
+  }
+
+  .intro__title:not(:last-child) {
+    margin-bottom: 13px;
+  }
+
+  .advantages__card h3 {
+    margin-bottom: 8px;
+  }
+
+  .advantages__card p {
+    padding-right: 0;
+  }
+
+  .advantages__card {
+    padding: 67px 15px 20px 20px;
+  }
+
+  .advantages__card--1::before {
+    top: 25px;
+    left: 20px;
+    width: 21px;
+    height: 26px;
+  }
+
+  .advantages__card--2::before {
+    top: 28px;
+    left: 20px;
+    width: 33px;
+    height: 19px;
+  }
+
+  .advantages__card--3::before {
+    top: 30px;
+    left: 20px;
+    width: 38px;
+    height: 13px;
+  }
+
+  .tours__body {
+    margin-right: -10px;
+    grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+
+  .card-tours {
+    width: 309px;
+  }
+
+  .card-tours__front h3 {
+    left: 35px;
+  }
+
+  .card-tours__front img {
+    width: 100%;
+  }
+
+  .card-tours__back {
+    padding: 25px 35px 35px;
   }
 
   .order__inner {
@@ -1619,7 +1815,8 @@ button,
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    gap: 60px;
+    row-gap: 53px;
+    padding: 0 0 0 10px;
   }
 
   .order__body p {
@@ -1627,15 +1824,80 @@ button,
     margin: 0 auto;
   }
 
+  .order__title:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
   .contact__map iframe {
     width: 324px;
     height: 335px;
+  }
+
+  .contact__map {
+    margin-left: 5px;
+  }
+
+  .contact__address p::before {
+    top: 7px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+
+  .footer__container {
+    -webkit-column-gap: 25px;
+    -moz-column-gap: 25px;
+    column-gap: 25px;
+  }
+
+  .footer__logo {
+    margin-left: 4px;
+  }
+
+  .footer__logo img {
+    width: 38px;
+    height: 20px;
+  }
+
+  .social__list {
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+
+  .social__icon--facebook {
+    width: 9px;
+    height: 16px;
+  }
+
+  .social__icon--instagram {
+    width: 16px;
+    height: 16px;
+  }
+
+  .social__icon--twitter {
+    width: 16px;
+    height: 13px;
+  }
+}
+
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
+  .header {
+    background-image: url("../img/promo-desktop@2x.jpg");
+  }
+
+  .main__advantages {
+    background-image: url("../img/advantage-tablet@2x.jpg");
+  }
+
+  .main__order {
+    background-image: url("../img/booking-tablet@2x.jpg");
   }
 }
 
 @media (max-width: 767px) {
   .container {
-    padding: 0 32px;
+    padding: 0 15px;
   }
 
   .nojs .header__top {
@@ -1680,12 +1942,16 @@ button,
   }
 
   .header p {
-    font-size: 18px;
-    line-height: 22px;
+    padding-right: 80px;
+    font-size: 16px;
   }
 
   .menu-open .header__logo {
     margin-left: 0;
+  }
+
+  .header__logo {
+    margin: 0;
   }
 
   .header__menu {
@@ -1696,7 +1962,7 @@ button,
     height: 100%;
     padding: 75px 15px;
     overflow: auto;
-    background-color: #e5e5e5;
+    background-color: #f9fbfd;
     z-index: 10;
     -webkit-transition: right 0.3s ease 0s;
     -o-transition: right 0.3s ease 0s;
@@ -1704,7 +1970,7 @@ button,
   }
 
   .menu-open .header__menu {
-    right: -15px;
+    right: -35px;
   }
 
   .header__menu .menu__list {
@@ -1715,7 +1981,7 @@ button,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 8px;
     margin: unset;
   }
 
@@ -1736,18 +2002,18 @@ button,
   }
 
   .header__bottom {
-    padding: 230px 0 250px 0;
+    padding: 133px 0 160px 0;
   }
 
   .header__title {
-    margin-bottom: 25px;
-    font-size: 50px;
-    line-height: 61px;
+    margin-bottom: 11px;
+    font-size: 36px;
+    line-height: 45px;
   }
 
   .logo__image {
-    width: 38px;
-    height: 20px;
+    width: 42px;
+    height: 22px;
   }
 
   .menu-open .logo__image {
@@ -1759,15 +2025,17 @@ button,
     fill: #011c40;
   }
 
-  .menu__list {
-    -webkit-column-gap: 23px;
-    -moz-column-gap: 23px;
-    column-gap: 23px;
+  .menu__list--footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 8px;
   }
 
   .menu__link {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .menu__link--footer {
@@ -1828,6 +2096,9 @@ button,
 
   .menu-open .icon-menu {
     background-color: transparent;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 14px;
+    flex: 0 0 14px;
   }
 
   .menu-open .icon-menu span {
@@ -1838,6 +2109,7 @@ button,
 
   .menu-open .icon-menu::before,
   .menu-open .icon-menu::after {
+    width: 18px;
     background-color: #011c40;
     opacity: 1;
   }
@@ -1857,42 +2129,38 @@ button,
   }
 
   .main__intro {
-    padding: 100px 0;
+    padding: 55px 0 65px;
   }
 
   .main__title {
-    font-size: 26px;
-    line-height: 39px;
+    font-size: 24px;
+    line-height: 36px;
   }
 
   .main__title:not(:last-child) {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .main__title--bold {
-    font-size: 34px;
-    line-height: 51px;
-  }
-
-  .main__title--bold:not(:last-child) {
-    margin-bottom: 25px;
+    line-height: 31px;
   }
 
   .main__advantages {
-    padding: 100px 0;
-    background-image: url("../img/advantage-tablet@1x.jpg");
+    padding: 55px 0 65px;
+    background-image: url("../img/advantage-mobile@1x.jpg");
   }
 
   .main__tours {
-    padding: 100px 0;
+    padding: 55px 0 65px;
   }
 
   .main__order {
-    background-image: url("../img/booking-tablet@1x.jpg");
+    padding: 60px 0 65px;
+    background-image: url("../img/booking-mobile@1x.jpg");
   }
 
   .main__contact {
-    padding: 100px 0;
+    padding: 55px 0 65px;
   }
 
   .intro p:not(:last-child) {
@@ -1900,22 +2168,27 @@ button,
   }
 
   .intro img {
-    width: 324px;
+    width: 290px;
   }
 
   .intro__container {
-    -webkit-column-gap: 30px;
-    -moz-column-gap: 30px;
-    column-gap: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 23px;
+  }
+
+  .intro__body {
+    padding-left: 0;
   }
 
   .intro__title {
-    padding-right: 50px;
-    line-height: 36px;
+    padding-right: 30px;
   }
 
   .intro__title:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 12px;
   }
 
   .advantages__list {
@@ -1926,29 +2199,42 @@ button,
     grid-template-columns: 1fr;
   }
 
-  .advantages__card {
-    padding: 15px 15px 15px 20px;
-  }
-
   .advantages__card h3 {
+    max-width: 170px;
+    margin: 0 0 10px 0;
     line-height: 25px;
   }
 
+  .advantages__card {
+    padding: 70px 20px 20px 20px;
+  }
+
   .tours__body {
-    grid-template-columns: repeat(auto-fill, minmax(309px, 1fr));
+    margin-right: 0;
+    padding: 0 10px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   }
 
   .card-tours {
-    width: 309px;
+    width: 270px;
+  }
+
+  .card-tours__front h3 {
+    left: 25px;
+    bottom: 18px;
   }
 
   .card-tours__front img {
-    width: 309px;
-    height: 386px;
+    width: 270px;
+  }
+
+  .card-tours__back {
+    padding: 28px 25px 35px;
   }
 
   .order__inner {
-    gap: 40px;
+    gap: 35px;
+    padding: 0;
   }
 
   .order__body p {
@@ -1957,13 +2243,29 @@ button,
     line-height: 22px;
   }
 
+  .order__body {
+    min-width: unset;
+  }
+
+  .order__title:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
   .order__form {
     width: 100%;
-    padding: 40px 30px;
+    padding: 35px 30px 40px;
+  }
+
+  .form-order h3 {
+    line-height: 25px;
   }
 
   .form-order {
     text-align: center;
+  }
+
+  .form-order__body {
+    margin-bottom: 23px;
   }
 
   .form-order__row {
@@ -1976,177 +2278,7 @@ button,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    row-gap: 40px;
-  }
-
-  .contact__info {
-    max-width: 324px;
-  }
-
-  .contact__address p::before {
-    top: 5px;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
-
-  .footer__container {
-    -webkit-column-gap: 25px;
-    -moz-column-gap: 25px;
-    column-gap: 25px;
-  }
-
-  .footer__logo img {
-    width: 38px;
-    height: 20px;
-  }
-
-  .social__list {
-    -webkit-column-gap: 23px;
-    -moz-column-gap: 23px;
-    column-gap: 23px;
-  }
-
-  .social__icon--facebook {
-    width: 9px;
-    height: 16px;
-  }
-
-  .social__icon--instagram {
-    width: 16px;
-    height: 16px;
-  }
-
-  .social__icon--twitter {
-    width: 16px;
-    height: 13px;
-  }
-}
-
-@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
-  .header {
-    background-image: url("../img/promo-tablet@2x.jpg");
-  }
-
-  .main__advantages {
-    background-image: url("../img/advantage-tablet@2x.jpg");
-  }
-
-  .main__order {
-    background-image: url("../img/booking-tablet@2x.jpg");
-  }
-}
-
-@media (max-width: 648px) {
-  .intro__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    row-gap: 40px;
-  }
-
-  .intro__body {
-    width: 100%;
-  }
-}
-
-@media (max-width: 374px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .header {
-    padding: 20px 0;
-    background-image: url("../img/promo-mobile@1x.jpg");
-  }
-
-  .header p {
-    padding-right: 80px;
-    font-size: 16px;
-  }
-
-  .menu-open .header__logo {
-    margin-left: 15px;
-  }
-
-  .header__bottom {
-    padding: 143px 0 165px 0;
-  }
-
-  .header__title {
-    margin-bottom: 25px;
-    font-size: 36px;
-    line-height: 45px;
-  }
-
-  .logo__image {
-    width: 42px;
-    height: 22px;
-  }
-
-  .menu-open .logo__image {
-    position: relative;
-    z-index: 20;
-  }
-
-  .menu-open .logo__image > path {
-    fill: #011c40;
-  }
-
-  .menu__list--footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    row-gap: 23px;
-  }
-
-  .main__intro {
-    padding: 65px 0;
-  }
-
-  .main__title {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  .main__title--bold {
-    line-height: 31px;
-  }
-
-  .main__advantages {
-    padding: 65px 0;
-    background-image: url("../img/advantage-mobile@1x.jpg");
-  }
-
-  .main__tours {
-    padding: 65px 0;
-  }
-
-  .main__order {
-    padding: 65px 0;
-    background-image: url("../img/booking-mobile@1x.jpg");
-  }
-
-  .main__contact {
-    padding: 65px 0;
-  }
-
-  .intro__title {
-    padding-right: 30px;
-  }
-
-  .tours__body {
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  }
-
-  .card-tours {
-    width: 270px;
-  }
-
-  .card-tours__front img {
-    width: 270px;
+    row-gap: 37px;
   }
 
   .contact__map iframe {
@@ -2154,8 +2286,24 @@ button,
     height: 316px;
   }
 
+  .contact__map {
+    margin-left: 0;
+  }
+
+  .contact__info {
+    max-width: 324px;
+  }
+
+  .contact__title p {
+    margin-bottom: 29px;
+  }
+
+  .contact__address p {
+    margin-bottom: 20px;
+  }
+
   .footer {
-    padding: 40px 0;
+    padding: 40px 0 42px;
   }
 
   .footer__container {
@@ -2166,18 +2314,28 @@ button,
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    row-gap: 30px;
+    row-gap: 22px;
+  }
+
+  .footer__logo {
+    margin-left: 0;
   }
 
   .footer__logo img {
     width: 42px;
     height: 22px;
   }
+
+  .social__list {
+    -webkit-column-gap: 23px;
+    -moz-column-gap: 23px;
+    column-gap: 23px;
+  }
 }
 
-@media (max-width: 374px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 374px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 374px) and (min-resolution: 144dpi), (max-width: 374px) and (min-resolution: 1.5dppx) {
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .header {
-    background-image: url("../img/promo-mobile@2x.jpg");
+    background-image: url("../img/promo-tablet@2x.jpg");
   }
 
   .main__advantages {
@@ -2186,5 +2344,35 @@ button,
 
   .main__order {
     background-image: url("../img/booking-mobile@2x.jpg");
+  }
+}
+
+@media (max-width: 374px) {
+  .header {
+    padding: 20px 0;
+    background-image: url("../img/promo-mobile@1x.jpg");
+  }
+
+  .menu-open .header__logo {
+    margin-left: 35px;
+  }
+
+  .form-order__row--data {
+    padding-left: 28px;
+  }
+
+  .form-order__checkmark {
+    top: 0;
+    width: 20px;
+    height: 20px;
+    -webkit-transform: unset;
+    -ms-transform: unset;
+    transform: unset;
+  }
+}
+
+@media (max-width: 374px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 374px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 374px) and (min-resolution: 144dpi), (max-width: 374px) and (min-resolution: 1.5dppx) {
+  .header {
+    background-image: url("../img/promo-mobile@2x.jpg");
   }
 }

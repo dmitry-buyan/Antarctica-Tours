@@ -42,6 +42,7 @@
 
     .menu-open & {
       background-color: transparent;
+      flex: 0 0 14px;
 
       span {
         transform: scale(0);
@@ -49,6 +50,7 @@
 
       &::before,
       &::after {
+        width: 18px;
         background-color: $color-tangaroa;
         opacity: 1;
       }
