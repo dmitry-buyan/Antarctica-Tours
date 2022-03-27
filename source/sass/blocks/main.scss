@@ -44,6 +44,10 @@
     font-size: 40px;
     line-height: 60px;
 
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
     @include vp-1023 {
       font-size: 34px;
       line-height: 51px;

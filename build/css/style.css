@@ -825,7 +825,7 @@ button,
 }
 
 .header__bottom {
-  padding: 190px 0 244px 95px;
+  padding: 196px 0 244px 95px;
 }
 
 .header__title {
@@ -905,6 +905,10 @@ button,
   line-height: 60px;
 }
 
+.main__title--bold:not(:last-child) {
+  margin-bottom: 15px;
+}
+
 .main__advantages {
   padding: 110px 0 120px;
   background: #e3ecf6 url("../img/advantage-desktop@1x.jpg") no-repeat center/cover;
@@ -980,9 +984,9 @@ button,
   justify-content: space-between;
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
-  -webkit-column-gap: 30px;
-  -moz-column-gap: 30px;
-  column-gap: 30px;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
   row-gap: 30px;
   margin: 0;
   padding: 0;
@@ -999,12 +1003,12 @@ button,
 .advantages__card {
   position: relative;
   max-width: 360px;
-  padding: 85px 15px 25px 30px;
+  padding: 80px 15px 25px 30px;
   background-color: #f9fbfd;
 }
 
 .advantages__card h3 {
-  margin: 0 0 20px 0;
+  margin: 0 0 8px 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -1103,7 +1107,7 @@ button,
 .card-tours__front h3 {
   position: absolute;
   left: 30px;
-  bottom: 30px;
+  bottom: 23px;
 }
 
 .card-tours__back {
@@ -1119,7 +1123,7 @@ button,
   row-gap: 10px;
   width: 100%;
   height: 100%;
-  padding: 34px 25px;
+  padding: 25px 25px 35px;
   background-color: #011c40;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
@@ -1444,16 +1448,22 @@ button,
   margin: 0;
 }
 
+.contact__title {
+  margin-bottom: 30px;
+}
+
 .contact__title p {
-  margin-bottom: 25px;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
 }
 
+.contact__address {
+  margin-bottom: 25px;
+}
+
 .contact__address p {
   position: relative;
-  margin-bottom: 25px;
   padding-left: 28px;
 }
 
@@ -1472,7 +1482,6 @@ button,
 
 .contact__phone a {
   position: relative;
-  margin-bottom: 25px;
   padding-left: 28px;
   white-space: nowrap;
 }

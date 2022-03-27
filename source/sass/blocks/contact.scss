@@ -51,46 +51,51 @@
   }
 }
 
-.contact__title p {
-  margin-bottom: 25px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
+.contact__title {
+  margin-bottom: 30px;
 
-  @include vp-767 {
-    margin-bottom: 29px;
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+
+    @include vp-767 {
+      margin-bottom: 29px;
+    }
   }
 }
 
-.contact__address p {
-  position: relative;
+.contact__address {
   margin-bottom: 25px;
-  padding-left: 28px;
 
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    content: "";
-    width: 18px;
-    height: 22px;
-    background: url("../img/sprite/icon-location.svg") no-repeat center;
-    transform: translate(0, -50%);
+  p {
+    position: relative;
+    padding-left: 28px;
 
-    @include vp-1023 {
-      top: 7px;
-      transform: none;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      content: "";
+      width: 18px;
+      height: 22px;
+      background: url("../img/sprite/icon-location.svg") no-repeat center;
+      transform: translate(0, -50%);
+
+      @include vp-1023 {
+        top: 7px;
+        transform: none;
+      }
     }
-  }
 
-  @include vp-767 {
-    margin-bottom: 20px;
+    @include vp-767 {
+      margin-bottom: 20px;
+    }
   }
 }
 
 .contact__phone a {
   position: relative;
-  margin-bottom: 25px;
   padding-left: 28px;
   white-space: nowrap;
 
