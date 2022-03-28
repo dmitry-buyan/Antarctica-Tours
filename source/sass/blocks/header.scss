@@ -110,10 +110,6 @@
       line-height: 22px;
       color: $color-tangaroa;
     }
-
-    &.is-active ~ [data-open-menu] {
-      display: none;
-    }
   }
 }
 
@@ -217,12 +213,17 @@
 }
 
 .header__menu-close {
-  position: absolute;
-  top: 20px;
-  right: 55px;
-  z-index: 4000;
-  padding: 0;
-  border: none;
-  background-color: $color-transparent;
-  cursor: pointer;
+  display: none;
+
+  @include vp-767 {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    z-index: 4000;
+    padding: 5px;
+    border: none;
+    background-color: $color-transparent;
+    cursor: pointer;
+  }
 }

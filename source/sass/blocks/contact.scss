@@ -68,6 +68,10 @@
 .contact__address {
   margin-bottom: 25px;
 
+  @include vp-767 {
+    margin-bottom: 20px;
+  }
+
   p {
     position: relative;
     padding-left: 28px;
@@ -86,10 +90,6 @@
         top: 7px;
         transform: none;
       }
-    }
-
-    @include vp-767 {
-      margin-bottom: 20px;
     }
   }
 }

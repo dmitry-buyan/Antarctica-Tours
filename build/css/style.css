@@ -845,14 +845,7 @@ button,
 }
 
 .header__menu-close {
-  position: absolute;
-  top: 20px;
-  right: 55px;
-  z-index: 4000;
-  padding: 0;
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  cursor: pointer;
+  display: none;
 }
 
 .logo__image {
@@ -2039,10 +2032,6 @@ button,
     color: #011c40;
   }
 
-  .header__menu.is-active ~ [data-open-menu] {
-    display: none;
-  }
-
   .header__bottom {
     padding: 133px 0 160px 0;
   }
@@ -2136,6 +2125,18 @@ button,
     -ms-transform: translate(-50%, 0) rotate(45deg);
     transform: translate(-50%, 0) rotate(45deg);
     bottom: calc(50% - 1px);
+  }
+
+  .header__menu-close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    z-index: 4000;
+    padding: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
   }
 
   .logo__image {
@@ -2425,7 +2426,7 @@ button,
     margin-bottom: 29px;
   }
 
-  .contact__address p {
+  .contact__address {
     margin-bottom: 20px;
   }
 
