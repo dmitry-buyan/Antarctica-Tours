@@ -57,9 +57,12 @@
   flex: 0 0 auto;
   margin: 0;
 
-  .menu-open & {
+  .scroll-lock & {
+    position: relative;
+    z-index: 4000;
+
     @include vp-767 {
-      margin-left: 0;
+      margin-left: 50px;
     }
 
     @include vp-374 {
@@ -86,12 +89,8 @@
     padding: 75px 15px;
     overflow: auto;
     background-color: $color-alice-blue;
-    z-index: 10;
+    z-index: 2000;
     transition: right 0.3s ease 0s;
-
-    .menu-open & {
-      right: -35px;
-    }
 
     .menu__list {
       flex: 1 1 auto;
@@ -110,6 +109,10 @@
       font-size: 18px;
       line-height: 22px;
       color: $color-tangaroa;
+    }
+
+    &.is-active ~ [data-open-menu] {
+      display: none;
     }
   }
 }
@@ -142,4 +145,84 @@
     font-size: 36px;
     line-height: 45px;
   }
+}
+
+.header__menu-open {
+  display: none;
+
+  @include vp-767 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 0 0 24px;
+    height: 14px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      left: 50%;
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background-color: $color-default-white;
+      transform: translate(-50%, 0);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - 1px);
+    }
+
+    .scroll-lock & {
+      background-color: transparent;
+      flex: 0 0 14px;
+
+      span {
+        transform: scale(0);
+      }
+
+      &::before,
+      &::after {
+        width: 18px;
+        background-color: $color-tangaroa;
+        opacity: 1;
+      }
+
+      &::before {
+        transform: translate(-50%, 0) rotate(-45deg);
+        top: calc(50% - 1px);
+      }
+
+      &::after {
+        transform: translate(-50%, 0) rotate(45deg);
+        bottom: calc(50% - 1px);
+      }
+    }
+  }
+}
+
+.header__menu-close {
+  position: absolute;
+  top: 20px;
+  right: 55px;
+  z-index: 4000;
+  padding: 0;
+  border: none;
+  background-color: $color-transparent;
+  cursor: pointer;
 }

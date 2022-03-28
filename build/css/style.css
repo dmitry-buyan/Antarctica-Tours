@@ -748,9 +748,9 @@ button,
 
 .modal__close-btn {
   position: absolute;
-  top: 22px;
-  right: 22px;
-  z-index: 1;
+  top: 18px;
+  right: 2px;
+  z-index: 4000;
   width: 40px;
   height: 40px;
   padding: 0;
@@ -824,6 +824,11 @@ button,
   margin: 0;
 }
 
+.scroll-lock .header__logo {
+  position: relative;
+  z-index: 4000;
+}
+
 .header__bottom {
   padding: 196px 0 244px 95px;
 }
@@ -835,9 +840,37 @@ button,
   line-height: 66px;
 }
 
+.header__menu-open {
+  display: none;
+}
+
+.header__menu-close {
+  position: absolute;
+  top: 20px;
+  right: 55px;
+  z-index: 4000;
+  padding: 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
 .logo__image {
   width: 70px;
   height: 38px;
+}
+
+.menu.is-active {
+  right: -35px;
+  left: unset;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: unset;
+  -ms-transform: unset;
+  transform: unset;
+  z-index: 3000;
+  cursor: unset;
+  pointer-events: unset;
 }
 
 .menu__body {
@@ -1652,12 +1685,12 @@ button,
     height: 20px;
   }
 
-  .menu-open .logo__image {
+  .scroll-lock .logo__image {
     position: relative;
     z-index: 20;
   }
 
-  .menu-open .logo__image > path {
+  .scroll-lock .logo__image > path {
     fill: #011c40;
   }
 
@@ -1955,8 +1988,8 @@ button,
     font-size: 16px;
   }
 
-  .menu-open .header__logo {
-    margin-left: 0;
+  .scroll-lock .header__logo {
+    margin-left: 50px;
   }
 
   .header__logo {
@@ -1972,14 +2005,10 @@ button,
     padding: 75px 15px;
     overflow: auto;
     background-color: #f9fbfd;
-    z-index: 10;
+    z-index: 2000;
     -webkit-transition: right 0.3s ease 0s;
     -o-transition: right 0.3s ease 0s;
     transition: right 0.3s ease 0s;
-  }
-
-  .menu-open .header__menu {
-    right: -35px;
   }
 
   .header__menu .menu__list {
@@ -2010,6 +2039,10 @@ button,
     color: #011c40;
   }
 
+  .header__menu.is-active ~ [data-open-menu] {
+    display: none;
+  }
+
   .header__bottom {
     padding: 133px 0 160px 0;
   }
@@ -2020,17 +2053,102 @@ button,
     line-height: 45px;
   }
 
+  .header__menu-open {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 24px;
+    flex: 0 0 24px;
+    height: 14px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+  }
+
+  .header__menu-open span,
+  .header__menu-open::before,
+  .header__menu-open::after {
+    content: "";
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    left: 50%;
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #ffffff;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+
+  .header__menu-open::before {
+    top: 0;
+  }
+
+  .header__menu-open::after {
+    bottom: 0;
+  }
+
+  .header__menu-open span {
+    top: calc(50% - 1px);
+  }
+
+  .scroll-lock .header__menu-open {
+    background-color: transparent;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 14px;
+    flex: 0 0 14px;
+  }
+
+  .scroll-lock .header__menu-open span {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+
+  .scroll-lock .header__menu-open::before,
+  .scroll-lock .header__menu-open::after {
+    width: 18px;
+    background-color: #011c40;
+    opacity: 1;
+  }
+
+  .scroll-lock .header__menu-open::before {
+    -webkit-transform: translate(-50%, 0) rotate(-45deg);
+    -ms-transform: translate(-50%, 0) rotate(-45deg);
+    transform: translate(-50%, 0) rotate(-45deg);
+    top: calc(50% - 1px);
+  }
+
+  .scroll-lock .header__menu-open::after {
+    -webkit-transform: translate(-50%, 0) rotate(45deg);
+    -ms-transform: translate(-50%, 0) rotate(45deg);
+    transform: translate(-50%, 0) rotate(45deg);
+    bottom: calc(50% - 1px);
+  }
+
   .logo__image {
     width: 42px;
     height: 22px;
   }
 
-  .menu-open .logo__image {
+  .scroll-lock .logo__image {
     position: relative;
     z-index: 20;
   }
 
-  .menu-open .logo__image > path {
+  .scroll-lock .logo__image > path {
     fill: #011c40;
   }
 
@@ -2362,7 +2480,7 @@ button,
     background-image: url("../img/promo-mobile@1x.jpg");
   }
 
-  .menu-open .header__logo {
+  .scroll-lock .header__logo {
     margin-left: 35px;
   }
 

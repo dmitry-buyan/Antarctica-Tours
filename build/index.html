@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="nojs">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -28,17 +28,22 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M70 35.4157C52.8956 24.5171 27.4568 39.6838 14.4189 36.1717C28.5467 43.0283 54.8482 27.8361 70 35.4157Z" fill="#F9FBFD"/>
               </svg>
             </a>
-            <div class="header__menu menu">
+            <div class="header__menu menu" data-menu="menu">
               <nav class="menu__body">
                 <ul class="menu__list">
-                  <li class="menu__item"><a href="#advantages" class="menu__link">Преимущества</a></li>
-                  <li class="menu__item"><a href="#tours" class="menu__link">Направления</a></li>
-                  <li class="menu__item"><a href="#order" class="menu__link">Ближайшие круизы</a></li>
-                  <li class="menu__item"><a href="#contacts" class="menu__link">Контакты</a></li>
+                  <li class="menu__item"><a href="#advantages" class="menu__link" data-close-modal="overlay"><span data-close-menu="menu">Преимущества</span></a></li>
+                  <li class="menu__item"><a href="#tours" class="menu__link" data-close-modal="overlay" data-close-menu="menu">Направления</a></li>
+                  <li class="menu__item"><a href="#order" class="menu__link" data-close-modal="overlay" data-close-menu="menu">Ближайшие круизы</a></li>
+                  <li class="menu__item"><a href="#contacts" class="menu__link" data-close-modal="overlay" data-close-menu="menu">Контакты</a></li>
                 </ul>
               </nav>
+              <button class="header__menu-close" type="button" aria-label="Закрыть" data-close-modal="overlay" data-close-menu="menu">
+                <svg width="15" height="15">
+                  <use xlink:href="img/sprite_auto.svg#icon-close"></use>
+                </svg>
+              </button>
             </div>
-            <button class="icon-menu" type="button"><span></span></button>
+            <button class="header__menu-open" type="button" data-open-menu="menu" data-open-modal="overlay"><span></span></button>
           </div>
           <div class="header__bottom">
             <div class="header__promo">
@@ -595,6 +600,12 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <div class="modal modal--preload" data-modal="overlay">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+      </div>
     </div>
 
     <script src="js/vendor.min.js"></script>

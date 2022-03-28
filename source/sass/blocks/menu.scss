@@ -1,3 +1,16 @@
+.menu {
+  &.is-active {
+    right: -35px;
+    left: unset;
+    visibility: visible;
+    opacity: 1;
+    transform: unset;
+    z-index: 3000;
+    cursor: unset;
+    pointer-events: unset;
+  }
+}
+
 .menu__body {
   display: flex;
   flex: 1 1 auto;
