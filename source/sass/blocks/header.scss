@@ -22,10 +22,10 @@
 
   @include vp-374 {
     padding: 20px 0;
-    background-image: url("../img/promo-mobile@1x.jpg");
+    background-image: url("../img/promo-mobile@1x.webp");
 
     @include retina {
-      background-image: url("../img/promo-mobile@2x.jpg");
+      background-image: url("../img/promo-mobile@2x.webp");
     }
   }
 

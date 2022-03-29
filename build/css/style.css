@@ -1485,7 +1485,7 @@ button,
 }
 
 .contact__address {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .contact__address p {
@@ -1526,7 +1526,7 @@ button,
 }
 
 .footer {
-  padding: 50px 0;
+  padding: 50px 0 55px;
   background-color: #011c40;
 }
 
@@ -1782,6 +1782,13 @@ button,
     margin-bottom: 13px;
   }
 
+  .advantages__list {
+    margin: 0 -5px 0 5px;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+  }
+
   .advantages__card h3 {
     margin-bottom: 8px;
   }
@@ -1829,6 +1836,7 @@ button,
 
   .card-tours__front h3 {
     left: 35px;
+    bottom: 30px;
   }
 
   .card-tours__front img {
@@ -2275,7 +2283,7 @@ button,
 
   .main__advantages {
     padding: 55px 0 65px;
-    background-image: url("../img/advantage-mobile@1x.jpg");
+    background-image: url("../img/advantage-mobile@1x.webp");
   }
 
   .main__tours {
@@ -2284,7 +2292,7 @@ button,
 
   .main__order {
     padding: 60px 0 65px;
-    background-image: url("../img/booking-mobile@1x.jpg");
+    background-image: url("../img/booking-mobile@1x.webp");
   }
 
   .main__contact {
@@ -2320,9 +2328,7 @@ button,
   }
 
   .advantages__list {
-    -webkit-column-gap: 30px;
-    -moz-column-gap: 30px;
-    column-gap: 30px;
+    margin: 0;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
@@ -2426,10 +2432,6 @@ button,
     margin-bottom: 29px;
   }
 
-  .contact__address {
-    margin-bottom: 20px;
-  }
-
   .footer {
     padding: 40px 0 42px;
   }
@@ -2467,18 +2469,18 @@ button,
   }
 
   .main__advantages {
-    background-image: url("../img/advantage-mobile@2x.jpg");
+    background-image: url("../img/advantage-mobile@2x.webp");
   }
 
   .main__order {
-    background-image: url("../img/booking-mobile@2x.jpg");
+    background-image: url("../img/booking-mobile@2x.webp");
   }
 }
 
 @media (max-width: 374px) {
   .header {
     padding: 20px 0;
-    background-image: url("../img/promo-mobile@1x.jpg");
+    background-image: url("../img/promo-mobile@1x.webp");
   }
 
   .scroll-lock .header__logo {
@@ -2501,6 +2503,6 @@ button,
 
 @media (max-width: 374px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 374px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 374px) and (min-resolution: 144dpi), (max-width: 374px) and (min-resolution: 1.5dppx) {
   .header {
-    background-image: url("../img/promo-mobile@2x.jpg");
+    background-image: url("../img/promo-mobile@2x.webp");
   }
 }
