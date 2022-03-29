@@ -46,10 +46,31 @@
 }
 
 .header__top {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 40px;
+
+  &::before {
+    position: fixed;
+    right: -100%;
+    top: -30px;
+    content: "";
+    width: 100%;
+    height: 110px;
+    z-index: 4000;
+    background-color: $color-alice-blue;
+    transition: right .3s ease 0s;
+  }
+
+  .scroll-lock &::before {
+    right: -35px;
+    left: unset;
+    z-index: 4000;
+    cursor: none;
+    pointer-events: none;
+  }
 }
 
 .header__logo {
@@ -185,6 +206,7 @@
     }
 
     .scroll-lock & {
+      display: none;
       background-color: transparent;
       flex: 0 0 14px;
 
@@ -215,15 +237,14 @@
 .header__menu-close {
   display: none;
 
-  @include vp-767 {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    z-index: 4000;
-    padding: 5px;
-    border: none;
-    background-color: $color-transparent;
-    cursor: pointer;
+  .scroll-lock & {
+    @include vp-767 {
+      display: block;
+      z-index: 4000;
+      padding: 5px;
+      border: none;
+      background-color: $color-transparent;
+      cursor: pointer;
+    }
   }
 }
