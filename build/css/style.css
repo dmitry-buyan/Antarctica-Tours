@@ -1248,7 +1248,6 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  row-gap: 21px;
   margin: 0 0 34px 0;
 }
 
@@ -1397,6 +1396,10 @@ button,
 
 .form-order__row--data input[type="checkbox"]:focus + .form-order__checkmark {
   outline: 2px solid #ffa500ff;
+}
+
+.form-order__row:not(:last-child) {
+  margin: 0 0 21px 0;
 }
 
 .form-order__checkmark {

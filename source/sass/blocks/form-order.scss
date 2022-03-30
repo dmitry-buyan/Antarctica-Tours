@@ -19,7 +19,6 @@
 .form-order__body {
   display: flex;
   flex-direction: column;
-  row-gap: 21px;
   margin: 0 0 34px 0;
 
   @include vp-767 {
@@ -97,6 +96,10 @@
     @include vp-374 {
       padding-left: 28px;
     }
+  }
+
+  &:not(:last-child) {
+    margin: 0 0 21px 0;
   }
 }
 
