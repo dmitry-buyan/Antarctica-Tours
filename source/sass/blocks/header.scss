@@ -52,24 +52,26 @@
   align-items: center;
   column-gap: 40px;
 
-  &::before {
-    position: fixed;
-    right: -100%;
-    top: -30px;
-    content: "";
-    width: 100%;
-    height: 110px;
-    z-index: 4000;
-    background-color: $color-alice-blue;
-    transition: right .3s ease 0s;
-  }
+  @include vp-767 {
+    &::before {
+      position: fixed;
+      right: -100%;
+      top: -30px;
+      content: "";
+      width: 100%;
+      height: 110px;
+      z-index: 4000;
+      background-color: $color-alice-blue;
+      transition: right .3s ease 0s;
+    }
 
-  .scroll-lock &::before {
-    right: -35px;
-    left: unset;
-    z-index: 4000;
-    cursor: none;
-    pointer-events: none;
+    .scroll-lock &::before {
+      right: -35px;
+      left: unset;
+      z-index: 4000;
+      cursor: none;
+      pointer-events: none;
+    }
   }
 }
 

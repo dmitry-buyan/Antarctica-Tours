@@ -2,21 +2,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 33px;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.social__item {
+  display: inline-flex;
+
+  &:not(:last-child) {
+    margin: 0 33px 0 0;
+  }
 
   @include vp-1023 {
-    column-gap: 20px;
+    &:not(:last-child) {
+      margin: 0 20px 0 0;
+    }
   }
 
   @include vp-767 {
-    column-gap: 23px;
+    &:not(:last-child) {
+      margin: 0 23px 0 0;
+    }
   }
 }
 
-.social__item,
 .social__link {
   display: inline-flex;
 }
